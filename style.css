@@ -5,11 +5,14 @@
 
 .view-highscores {
     position:absolute;
-    top:0;
-    left:0;
+
 }
 .time {
     position:absolute;
     top:0;
     right:0;
+}
+
+li {
+    margin-left:5px;
 }

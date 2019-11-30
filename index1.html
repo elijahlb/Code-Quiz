@@ -3,6 +3,7 @@
     <head>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
             <link rel="stylesheet" type="text/css" href="style.css">
+            <title>Code Quiz</title>
     </head>
     <body>
         <div class="jumbotron">
@@ -27,28 +28,25 @@
 
 
         <div class="container">
-            <div class="row">
-                <div class ="col-md-12">
-        <h2>Coding Quiz Challenge</h2>
-                    <br>
-        <h5>Try to answer the following code-related questions within the time limit. Keep in mind 
-            that incorrect answers will penalize your score/time by ten seconds!
-        </h5>
-            <div>
-                    <a href='index2.html'><button>Start Quiz</button></a>
+            <div id="question-container" class="hide">
+                <div id="question"></div>
+                <div id="answer-buttons" class="btn-grid">
+                    <input id="ansBtn1" class="ansButton" type="radio"></input>
+                    <input id="ansBtn2" class="ansButton" type="radio"></input>
+                    <input id="ansBtn3" class="ansButton" type="radio"></input>
+                    <input id="ansBtn4" class="ansButton" type="radio"></input>
+                    <input type="submit">
+                </div>
             </div>
-              
-            </div>
+            <div class="controls">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
         </div>
-
-
-
-
-
+            <script type="text/javascript" src="script.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
             <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-            <script type="text/javascript" href="script.js"></script>
+
     </body>
 </html>

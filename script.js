@@ -1,3 +1,28 @@
+var startButton = document.getElementById("start-btn")
+var questionContainer = document.getElementById("question-container")
+var nextButton = document.getElementById("next-btn")
+var answerButton1 = document.getElementById("ansBtn1")
+var answerButton2 = document.getElementById("ansBtn2")
+var answerButton3 = document.getElementById("ansBtn3")
+var answerButton4 = document.getElementById("ansBtn4")
+var question = document.getElementById("question")
+var userAnswer = document.querySelector(".ansButton")
+
+
+startButton.addEventListener("click", startGame);
+
+
+
+function startGame (){
+    startButton.classList.add("hide");
+    questionContainer.classList.remove("hide");
+
+    
+}
+
+
+
+
 var questions = [
     {   
         title : "Which of the following is correct about features of JavaScript?",
@@ -52,3 +77,14 @@ var questions = [
         answer : "reduceRight()"
     },
 ]
+
+for (var i=0;i<choice.choices.length;i++) {
+    answerButton1.textContent = choice.choices[0]
+    answerButton2.textContent = choice.choices[1]
+    answerButton3.textContent = choice.choices[2]
+    answerButton4.textContent = choice.choices[3]
+    question.textContent = questions.q
+
+    
+   
+}

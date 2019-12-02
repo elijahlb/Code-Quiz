@@ -16,3 +16,7 @@
 li {
     margin-left:5px;
 }
+
+.hide {
+    opacity:0;
+}

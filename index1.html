@@ -31,11 +31,10 @@
             <div id="question-container" class="hide">
                 <div id="question"></div>
                 <div id="answer-buttons" class="btn-grid">
-                    <input id="ansBtn1" class="ansButton" type="radio"></input>
-                    <input id="ansBtn2" class="ansButton" type="radio"></input>
-                    <input id="ansBtn3" class="ansButton" type="radio"></input>
-                    <input id="ansBtn4" class="ansButton" type="radio"></input>
-                    <input type="submit">
+                    <button id="0" class="ansButton" onClick="checkAnswer(this.id)">Answer 1</button>
+                    <button id="1" class="ansButton" onClick="checkAnswer(this.id)">Answer 2</button>
+                    <button id="2" class="ansButton" onClick="checkAnswer(this.id)">Answer 3</button>
+                    <button id="3" class="ansButton" onClick="checkAnswer(this.id)">Answer 4</button>
                 </div>
             </div>
             <div class="controls">
@@ -43,6 +42,7 @@
                 <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
         </div>
+            <script type="text/javascript" src="questions.js"></script>
             <script type="text/javascript" src="script.js"></script>
             <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -50,3 +50,4 @@
 
     </body>
 </html>
+

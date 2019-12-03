@@ -31,10 +31,16 @@
             <div id="question-container" class="hide">
                 <div id="question"></div>
                 <div id="answer-buttons" class="btn-grid">
-                    <button id="0" class="ansButton" onClick="checkAnswer(this.id)">Answer 1</button>
-                    <button id="1" class="ansButton" onClick="checkAnswer(this.id)">Answer 2</button>
-                    <button id="2" class="ansButton" onClick="checkAnswer(this.id)">Answer 3</button>
-                    <button id="3" class="ansButton" onClick="checkAnswer(this.id)">Answer 4</button>
+                    <button id="0" class="ansButton" onClick="replyClick(this.id)"></button><br>
+                    <button id="1" class="ansButton" onClick="replyClick(this.id)"></button><br>
+                    <button id="2" class="ansButton" onClick="replyClick(this.id)"></button><br>
+                    <button id="3" class="ansButton" onClick="replyClick(this.id)"></button>
+                </div>
+                <div id="validate">
+
+                </div>
+                <div>
+                    Score: <span id="score"></span>
                 </div>
             </div>
             <div class="controls">

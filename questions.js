@@ -12,9 +12,7 @@ var questions = [
 ]
 
 var choice = [
-["JavaScript is a lightweight, interpreted programming language.", 
-    "JavaScript is designed for creating network-centric applications.", 
-    "JavaScript is complementary to and integrated with Java.", "All of the above."],
+["JavaScript is a lightweight, interpreted programming language.", "JavaScript is designed for creating network-centric applications.", "JavaScript is complementary to and integrated with Java.", "All of the above."],
  ["named function", "anonymous function", "Both of the above", "None of the above"],
 ["getIndex()", "location()", "indexOf()", "None of the above"],
 ["substr()", "getSubstring()", "slice()", "None of the above"],

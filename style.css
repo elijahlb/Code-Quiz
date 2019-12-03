@@ -20,3 +20,13 @@ li {
 .hide {
     opacity:0;
 }
+
+.correct {
+    color: green;
+    font-weight: 600;
+}
+
+.incorrect {
+    color:red; 
+    font-weight: 600;
+}

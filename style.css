@@ -33,6 +33,14 @@ body {
     color:white;
 }
 
+#title {
+    text-align:center;
+    color:white;
+    font-family: 'Audiowide', cursive;
+    margin-left:38%;
+    font-size:300%;
+}
+
 #next-btn {
     text-align:center;
     margin-right:20px;
@@ -40,6 +48,10 @@ body {
     font-size:300%;
     border-style:none;
 
+}
+
+#start-btn {
+    margin-left:200px;
 }
 
 #next-btn:hover {
@@ -121,3 +133,28 @@ li {
     color: green;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 600px) {
+    #title {
+      font-size:100%;
+      margin-top:20px;
+      margin-left:180px;
+    }
+    .view-highscores{
+        position:relative;
+        margin-top:0;
+        margin-left:140px;
+
+    }
+    .time{
+        position:relative;
+        margin-left:160px;
+        padding:5px;
+    }
+    #start-btn {
+        margin-left:170px;
+    }
+    #next-btn {
+        margin-left:40px;
+    }
+  }

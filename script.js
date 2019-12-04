@@ -5,6 +5,7 @@ var answerButton1 = document.getElementById("0");
 var answerButton2 = document.getElementById("1");
 var answerButton3 = document.getElementById("2");
 var answerButton4 = document.getElementById("3");
+var end = questions.length;
 var question = document.getElementById("question");
 var newButtons = document.getElementById("answer-buttons");
 var validate = document.getElementById("validate");
@@ -90,7 +91,7 @@ function renderTime() {
 
 //Function to subtract 10 seconds each time user answers incorrectly
 function subtractTime() {
-    secondsElapsed+=10;
+    secondsElapsed+=3;
   }
   
   
@@ -103,14 +104,13 @@ function subtractTime() {
     function startGame (){
         //I put the start timer function here so that when a user clicks start, the timer starts as well
         startTimer();
-        startButton.classList.add("hide");
+    startButton.classList.add("hide");
     questionContainer.classList.remove("hide");
     question.textContent = questions[index].title;
         answerButton1.textContent = questions[index].choices[0];
         answerButton2.textContent = questions[index].choices[1];
         answerButton3.textContent = questions[index].choices[2];
         answerButton4.textContent = questions[index].choices[3]; 
-  
 };
     function replyClick(clicked_id){
     if (clicked_id == questions[index].answer) {
@@ -128,24 +128,38 @@ function subtractTime() {
             validate.classList.add("incorrect")
             validate.innerHTML = "Incorrect"
             nextButton.classList.remove("hide");
-        var hideButtons = document.querySelectorAll(".ansButton")
-        for(var i=0;i<=hideButtons.length;i++) {
-            hideButtons[i].setAttribute("disabled",true)
+        var allButtons = document.querySelectorAll(".ansButton")
+        for(var i=0;i<=allButtons.length;i++) {
+            allButtons[i].setAttribute("disabled",true)
+            subtractTime();
         };
         //I added the subtract time function here so that time is deducted when an answer is incorrect
-        subtractTime();
     } 
     };
 
     nextButton.addEventListener("click", next)
+
+    var nextCount = 0;
+    nextButton.onclick = function() {
+        nextCount+=1
+    if (nextCount === 4) {
+        var finalScore = (score + totalSeconds-secondsElapsed);
+        
+        alert(finalScore);
+    }
+    };
+
     function next() {
         question.textContent = questions[index+=1].title;
             answerButton1.textContent = questions[index].choices[0];
             answerButton2.textContent = questions[index].choices[1];
             answerButton3.textContent = questions[index].choices[2];
             answerButton4.textContent = questions[index].choices[3]; 
-        var hideButtons = document.querySelectorAll(".ansButton")
-        for(var i=0;i<=hideButtons.length;i++) {
-            hideButtons[i].removeAttribute("disabled")
+        var allButtons = document.querySelectorAll(".ansButton")
+        for(var i=0;i<=allButtons.length;i++) {
+            allButtons[i].removeAttribute("disabled")
     }
     };
+
+    
+    

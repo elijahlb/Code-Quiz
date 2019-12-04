@@ -14,7 +14,7 @@ var minutes = document.getElementById("minutes");
 var seconds = document.getElementById("seconds");
 var index = 0;
 
-/*----------------------------------------------- TIMER ------------------------------------ */
+// TIMER  
 var totalSeconds = 0;
 var secondsElapsed = 0;
 var interval;
@@ -29,7 +29,7 @@ function getFormattedMinutes() {
       formattedMinutes = minutesLeft;
     }  
     return formattedMinutes;
-  }
+  };
 
 function getFormattedSeconds() {
     var secondsLeft = (totalSeconds - secondsElapsed) % 60;
@@ -40,14 +40,14 @@ function getFormattedSeconds() {
       formattedSeconds = secondsLeft;
     }
     return formattedSeconds;
-  }
+  };
 
 
 function setTime() {
     var minutes = 0.75;
     clearInterval(interval);
     totalSeconds = minutes * 60;
-  }
+  };
 
 function renderTime() { 
     minutes.textContent = getFormattedMinutes();
@@ -55,7 +55,7 @@ function renderTime() {
     if (secondsElapsed >= totalSeconds) {
       stopTimer();
     }
-  }
+  };
   
   function startTimer() {
     setTime();
@@ -63,25 +63,25 @@ function renderTime() {
       secondsElapsed++;
       renderTime();
     }, 1000);
-  }
+  };
   
   function stopTimer() {
     secondsElapsed = 0;
     setTime();
     renderTime();
-  }
+  };
 
 function subtractTime() {
     secondsElapsed+=3;
-  }
+  };
   
   
-  /* ---------------------------------- END TIMER -------------------------------------  */
+  // END TIMER  
 
 
     startButton.addEventListener("click", startGame);
 
-
+// Begins quiz
     function startGame (){
         startTimer();
     startButton.classList.add("hide");
@@ -92,6 +92,9 @@ function subtractTime() {
         answerButton3.textContent = questions[index].choices[2];
         answerButton4.textContent = questions[index].choices[3]; 
 };
+
+
+    // Evaluates buttons clicked
     function replyClick(clicked_id){
     if (clicked_id == questions[index].answer) {
         score+=1;
@@ -116,10 +119,11 @@ function subtractTime() {
     } 
     };
 
+    
+
+
+   // Ends Quiz ---- change nextCount in if statement to reflect any added quiz questions
     nextButton.addEventListener("click", next)
-
-
-   
     var nextCount = 0;
     nextButton.onclick = function() {
         nextCount+=1
@@ -132,6 +136,7 @@ function subtractTime() {
     }
     };
 
+    // Saves score to local storage and sends to highscores dropdown
     function saveScore () {                   
         var li = document.createElement('li');  
         var ul = document.getElementById('ul')  
@@ -141,8 +146,9 @@ function subtractTime() {
         localStorage.setItem("initials", inputValue);                 
         var initialInput = localStorage.getItem("initials") + ' : ' + document.getElementById("userScore").innerHTML;    
         li.textContent = initialInput   
-    }
+    };
 
+    // Next button function
     function next() {
         question.textContent = questions[index+=1].title;
             answerButton1.textContent = questions[index].choices[0];
@@ -155,13 +161,9 @@ function subtractTime() {
     }
     };
 
+    // Restarts quiz
     function restart() {
-        questionContainer.classList.add("hide")
-        startButton.classList.remove("hide")
-        document.getElementById("add-info").classList.add("hide")
-        score=0;
-        startGame();
-        startTimer();
+        location.reload();
     }
 
 

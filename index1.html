@@ -2,7 +2,7 @@
 <html>
     <head>
             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-            <link rel="stylesheet" type="text/css" href="style.css">
+            <link rel="stylesheet" type="text/css" href="../Code-Quiz/assets/style.css">
             <link href="https://fonts.googleapis.com/css?family=Audiowide&display=swap" rel="stylesheet">
             <title>Code Quiz</title>
     </head>
@@ -57,14 +57,16 @@
                             Your score is : <span id="userScore"></span>
                         </div>
                     Your Initials: <input type="text" name="fname" id="quiz-form"/><br>
+                    <div id="submit-refresh">
                     <input id="submit" type="button" value="Submit" onclick="saveScore()"/>
                     <input id="submit" type="button" value="Restart" onclick="restart()"/>
+                    </div>
                 </form>
             </div>
             <div class="controls">
                     <div id="viewHighscores"></div>
                 <button id="start-btn" class="start-btn btn orange">Start</button>
-                <button id="next-btn" class="next-btn btn hide orange">Next</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
             </div>
         </div>
         

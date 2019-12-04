@@ -1,12 +1,12 @@
 .container {
     text-align:center;
     border:5px solid white;
-    background-image:url(space-911785_1920.jpg);
-  
+    background-image:url(../assets/space-911785_1920.jpg);
+    
 }
 
 .jumbotron {
-    background-image:url(space-911785_1920.jpg);
+    background-image:url(../assets/space-911785_1920.jpg);
     border-bottom:5px solid white;
 }
 body {
@@ -41,38 +41,51 @@ body {
     font-size:300%;
 }
 
+/*******************BUTTONS************************/
+#start-btn {
+    margin-left:200px;
+}
 #next-btn {
     text-align:center;
     margin-right:20px;
     margin-top:50px;
-    font-size:300%;
     border-style:none;
-
+    font-weight:100;
+    font-family: 'Audiowide', cursive;
+    font-size:300%;
+    border-radius:10px;
+    padding:10px;
+    color:white;
+    background-color:none;
 }
-
-#start-btn {
-    margin-left:200px;
-}
-
 #next-btn:hover {
-    transform: skew(-10deg);
-}
-
-
-
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 .view-highscores {
     position:absolute;
-    margin-left:80px;
-    
+    margin-left:80px;  
 }
-
 #dropdownMenuButton {
     background-color:#190100;
     color:white;
     font-family: 'Audiowide', cursive;
     border-style:none;
 }
-
 .ansButton {
     background-color:#190100;
     color:white;
@@ -82,7 +95,9 @@ body {
     font-family: 'Audiowide', cursive;
     font-size:large;
 }
-
+.ansButton:hover {
+    animation: bounce .5s;
+}
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
 		-webkit-transform: translateY(0);
@@ -99,10 +114,18 @@ body {
 		transform: translateY(-10px);
 	}
 }
-
-.ansButton:hover {
-    animation: bounce .5s;
+#submit {
+    padding:10px;
+    font-family: 'Audiowide', cursive;
+    color:white;
+    background-color:#190100;
+    border-radius:10px;
+    border-style:none;
 }
+/*******************************************/
+
+
+
 
 .time {
     position:absolute;
@@ -125,7 +148,7 @@ li {
     opacity:0;
 }
 .incorrect {
-    color:red; 
+    color:white; 
     font-weight: 600;
 }
 
@@ -146,22 +169,13 @@ form {
     margin-bottom:10px;
 }
 
-#submit {
-    padding:10px;
-    font-family: 'Audiowide', cursive;
-    color:white;
-    background-color:#190100;
-    border-radius:10px;
-    border-style:none;
-}
-
 .fa-trophy {
     font-size:300%;
     margin-bottom:160px;
 }
 
 .correct {
-    color: green;
+    color:white;
     font-weight: 600;
 }
 
@@ -189,7 +203,12 @@ form {
     #next-btn {
         margin-left:40px;
     }
-  }
+
+    #submit-refresh {
+        padding:10px;
+    }
+}
+  
 
 @media only screen and (max-width: 600px) {
     #title {
@@ -215,5 +234,3 @@ form {
         margin-left:40px;
     }
   }
-
- 

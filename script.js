@@ -5,8 +5,8 @@ var answerButton1 = document.getElementById("0");
 var answerButton2 = document.getElementById("1");
 var answerButton3 = document.getElementById("2");
 var answerButton4 = document.getElementById("3");
-var end = questions.length;
 var question = document.getElementById("question");
+var userInput = document.getElementById("add-info");
 var newButtons = document.getElementById("answer-buttons");
 var validate = document.getElementById("validate");
 var score = parseInt(document.getElementById("score").innerHTML);
@@ -15,19 +15,14 @@ var seconds = document.getElementById("seconds");
 var index = 0;
 
 /*----------------------------------------------- TIMER ------------------------------------ */
-//Setting seconds and interval variables
 var totalSeconds = 0;
 var secondsElapsed = 0;
 var interval;
 
-//Function created to format minutes
 function getFormattedMinutes() {
     var secondsLeft = totalSeconds - secondsElapsed;
-  
     var minutesLeft = Math.floor(secondsLeft / 60);
-  
     var formattedMinutes;
-  
     if (minutesLeft < 10) {
       formattedMinutes = "0" + minutesLeft;
     } else {
@@ -36,13 +31,9 @@ function getFormattedMinutes() {
     return formattedMinutes;
   }
 
-  //Function created to format seconds
 function getFormattedSeconds() {
-    //The % operator is a Modulus operator. Gives the remainder of seconds out of 60. We use 60 because there are 60 seconds in a min
     var secondsLeft = (totalSeconds - secondsElapsed) % 60;
-  
     var formattedSeconds;
-  
     if (secondsLeft < 10) {
       formattedSeconds = "0" + secondsLeft;
     } else {
@@ -51,45 +42,35 @@ function getFormattedSeconds() {
     return formattedSeconds;
   }
 
-  //Function created to format setting the timer
+
 function setTime() {
-    //Set timer to  45 seconds
     var minutes = 0.75;
-  
     clearInterval(interval);
     totalSeconds = minutes * 60;
   }
 
-  //Function created to display the timer as it counts down
-function renderTime() {
-    //I created a span that displays minutes for you. 
+function renderTime() { 
     minutes.textContent = getFormattedMinutes();
     seconds.textContent = getFormattedSeconds();
-  
-    //If time runs out do the following
     if (secondsElapsed >= totalSeconds) {
       stopTimer();
     }
   }
   
-  //Start timer function
   function startTimer() {
     setTime();
-  
     interval = setInterval(function () {
       secondsElapsed++;
       renderTime();
     }, 1000);
   }
   
-  //Stop timer function
   function stopTimer() {
     secondsElapsed = 0;
     setTime();
     renderTime();
   }
 
-//Function to subtract 10 seconds each time user answers incorrectly
 function subtractTime() {
     secondsElapsed+=3;
   }
@@ -102,7 +83,6 @@ function subtractTime() {
 
 
     function startGame (){
-        //I put the start timer function here so that when a user clicks start, the timer starts as well
         startTimer();
     startButton.classList.add("hide");
     questionContainer.classList.remove("hide");
@@ -133,21 +113,35 @@ function subtractTime() {
             allButtons[i].setAttribute("disabled",true)
             subtractTime();
         };
-        //I added the subtract time function here so that time is deducted when an answer is incorrect
     } 
     };
 
     nextButton.addEventListener("click", next)
 
+
+   
     var nextCount = 0;
     nextButton.onclick = function() {
         nextCount+=1
     if (nextCount === 4) {
         var finalScore = (score + totalSeconds-secondsElapsed);
-        
-        alert(finalScore);
+        questionContainer.classList.add("hide")
+        userInput.classList.remove("hide")
+        document.getElementById('userScore').innerHTML = finalScore;
+        var finalScore = (score + totalSeconds-secondsElapsed);
     }
     };
+
+    function saveScore () {                   
+        var li = document.createElement('li');  
+        var ul = document.getElementById('ul')  
+        ul.appendChild(li);                                     
+        var input = document.getElementById("quiz-form");  
+        var inputValue = input.value         
+        localStorage.setItem("initials", inputValue);                 
+        var initialInput = localStorage.getItem("initials") + ' : ' + document.getElementById("userScore").innerHTML;    
+        li.textContent = initialInput   
+    }
 
     function next() {
         question.textContent = questions[index+=1].title;
@@ -161,5 +155,14 @@ function subtractTime() {
     }
     };
 
-    
+    function restart() {
+        questionContainer.classList.add("hide")
+        startButton.classList.remove("hide")
+        document.getElementById("add-info").classList.add("hide")
+        score=0;
+        startGame();
+        startTimer();
+    }
+
+
     

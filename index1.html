@@ -15,9 +15,7 @@
                           View Highscores
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                          <li></li>
-                          <li></li>
-                          <li></li>
+                          <ul id="ul"></ul>
                         </div>
                       </div>
                 </div>
@@ -52,11 +50,24 @@
                     Score: <span id="score">0</span>
                 </div>
             </div>
+            <div id="add-info" class="hide">
+                <form >
+                        <i class="fas fa-trophy"></i>
+                        <div id='final-score'>
+                            Your score is : <span id="userScore"></span>
+                        </div>
+                    Your Initials: <input type="text" name="fname" id="quiz-form"/><br>
+                    <input id="submit" type="button" value="Submit" onclick="saveScore()"/>
+                    <input id="submit" type="button" value="Restart" onclick="restart()"/>
+                </form>
+            </div>
             <div class="controls">
+                    <div id="viewHighscores"></div>
                 <button id="start-btn" class="start-btn btn orange">Start</button>
                 <button id="next-btn" class="next-btn btn hide orange">Next</button>
             </div>
         </div>
+        
             <script type="text/javascript" src="questions.js"></script>
             <script type="text/javascript" src="script.js"></script>
             <script src="https://kit.fontawesome.com/76e73fc237.js" crossorigin="anonymous"></script>

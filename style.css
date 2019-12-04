@@ -129,10 +129,67 @@ li {
     font-weight: 600;
 }
 
+#form {
+    color:Black;
+    font-family: 'Audiowide', cursive;
+    margin-bottom:10px;
+}
+
+form {
+    color:white;
+    font-family: 'Audiowide', cursive;
+}
+
+#final-score {
+    color:white;
+    font-family: 'Audiowide', cursive;
+    margin-bottom:10px;
+}
+
+#submit {
+    padding:10px;
+    font-family: 'Audiowide', cursive;
+    color:white;
+    background-color:#190100;
+    border-radius:10px;
+    border-style:none;
+}
+
+.fa-trophy {
+    font-size:300%;
+    margin-bottom:160px;
+}
+
 .correct {
     color: green;
     font-weight: 600;
 }
+
+@media only screen and (max-width: 800px) {
+    #title {
+      font-size:300%;
+      margin-top:20px;
+      margin-left:170px;
+    }
+    .view-highscores{
+        position:relative;
+        margin-top:0;
+        margin-left:270px;
+
+    }
+    .time{
+        position:relative;
+        margin-left:160px;
+        padding:5px;
+        margin-left:285px;
+    }
+    #start-btn {
+        margin-left:170px;
+    }
+    #next-btn {
+        margin-left:40px;
+    }
+  }
 
 @media only screen and (max-width: 600px) {
     #title {
@@ -158,3 +215,5 @@ li {
         margin-left:40px;
     }
   }
+
+ 

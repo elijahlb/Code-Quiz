@@ -1,16 +1,108 @@
 .container {
     text-align:center;
+    border:5px solid white;
+    background-image:url(space-911785_1920.jpg);
   
 }
 
-.view-highscores {
-    position:absolute;
+.jumbotron {
+    background-image:url(space-911785_1920.jpg);
+    border-bottom:5px solid white;
+}
+body {
+    background-color:black;
+}
+
+#question {
+    color:white;
+    font-weight:500;
+    padding:20px;
+    font-family: 'Audiowide', cursive;
+    font-size:200%;
 
 }
+
+.orange{
+    text-align:center;
+    font-weight:100;
+    font-family: 'Audiowide', cursive;
+    font-size:100%;
+    border-radius:10px;
+    padding:10px;
+    background-color:#190100;
+    color:white;
+}
+
+#next-btn {
+    text-align:center;
+    margin-right:20px;
+    margin-top:50px;
+    font-size:300%;
+    border-style:none;
+
+}
+
+#next-btn:hover {
+    transform: skew(-10deg);
+}
+
+
+
+.view-highscores {
+    position:absolute;
+    margin-left:80px;
+    
+}
+
+#dropdownMenuButton {
+    background-color:#190100;
+    color:white;
+    font-family: 'Audiowide', cursive;
+    border-style:none;
+}
+
+.ansButton {
+    background-color:#190100;
+    color:white;
+    border-radius:20px;
+    border-style:none;
+    padding:10px;
+    font-family: 'Audiowide', cursive;
+    font-size:large;
+}
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+.ansButton:hover {
+    animation: bounce .5s;
+}
+
 .time {
     position:absolute;
     top:0;
     right:0;
+    border-radius:10px;
+    padding:10px;
+    margin-top:60px;
+    margin-right:80px;
+    background-color:#190100;
+    color:white;
+    font-family: 'Audiowide', cursive;
 }
 
 li {
@@ -20,13 +112,12 @@ li {
 .hide {
     opacity:0;
 }
-
-.correct {
-    color: green;
+.incorrect {
+    color:red; 
     font-weight: 600;
 }
 
-.incorrect {
-    color:red; 
+.correct {
+    color: green;
     font-weight: 600;
 }

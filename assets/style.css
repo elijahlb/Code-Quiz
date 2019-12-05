@@ -43,7 +43,9 @@ body {
 
 /*******************BUTTONS************************/
 #start-btn {
-    margin-left:200px;
+    margin-left:80px;
+    margin-bottom:50px;
+    
 }
 #next-btn {
     text-align:center;
@@ -214,7 +216,7 @@ form {
     #title {
       font-size:100%;
       margin-top:20px;
-      margin-left:180px;
+      margin-left:160px;
     }
     .view-highscores{
         position:relative;
@@ -228,7 +230,7 @@ form {
         padding:5px;
     }
     #start-btn {
-        margin-left:170px;
+        margin-left:40px;
     }
     #next-btn {
         margin-left:40px;

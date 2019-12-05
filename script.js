@@ -97,7 +97,7 @@ function subtractTime() {
     // Evaluates buttons clicked
     function replyClick(clicked_id){
     if (clicked_id == questions[index].answer) {
-        score+=1;
+        score+=10;
         document.getElementById("score").innerHTML = score;
             validate.classList.add("correct")
             validate.innerHTML = "Correct"

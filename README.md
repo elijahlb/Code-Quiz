@@ -5,6 +5,10 @@
 #### By Elijah Broaddus
 ​
 ## Description
+
+<img width="1136" alt="Screen Shot 2020-01-15 at 11 41 07 PM" src="https://user-images.githubusercontent.com/50716060/72493982-86b66300-37f0-11ea-9513-20e5747ceecb.png">
+
+
 Code-Quiz is a quiz application that can be modified to suit the user's needs. 
 
 ##Features
